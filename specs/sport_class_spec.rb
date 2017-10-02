@@ -33,4 +33,8 @@ class TestSports< Minitest::Test
     @team.players[0]
     assert_equal(true, @team.player_exists('player_2'))
   end
+
+  def test_team_score
+    assert_equal(1, @team.team_score('won'))
+  end
 end

@@ -4,6 +4,7 @@ attr_accessor :team_name, :players, :coach
     @team_name= team_name
     @players = players
     @coach = coach
+    @points = 0
   end
 
   # def team_name
@@ -29,5 +30,13 @@ attr_accessor :team_name, :players, :coach
 
   def player_exists(player)
    @players.include?(player)
+  end
+
+  def team_score(wonorlost)
+    if (wonorlost == 'won')
+      score = @points + 1
+      return score
+    end
+    return lost
   end
 end
