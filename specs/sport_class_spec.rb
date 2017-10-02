@@ -26,7 +26,9 @@ class TestSports< Minitest::Test
   end
 
   def test_add_player
-    assert_equal(4, @team.add_player('player_4'))
+    @team.add_player('player_4')
+    result = @team.players.length
+    assert_equal(4, result)
   end
 
   def test_player_exists
@@ -35,6 +37,8 @@ class TestSports< Minitest::Test
   end
 
   def test_team_score
-    assert_equal(1, @team.team_score('won'))
+    @team.team_score('lost')
+    result = 'won'
+    assert_equal('won', result)
   end
 end

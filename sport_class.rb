@@ -35,10 +35,14 @@ attr_accessor :team_name, :players, :coach
   end
 
   def team_score(wonorlost)
-    if (wonorlost == 'won')
-      score = @points + 1
-      return score
+    score = 0
+
+    case wonorlost
+    when "won"
+      return wonorlost
+    when 'lost'
+      score = @points += 1
+      return 'won'
     end
-    return lost
   end
 end
