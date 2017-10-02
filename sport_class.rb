@@ -1,5 +1,7 @@
 class Sports
+
 attr_accessor :team_name, :players, :coach
+
   def initialize(team_name, players, coach)
     @team_name= team_name
     @players = players
@@ -24,12 +26,12 @@ attr_accessor :team_name, :players, :coach
   # end
 
   def add_player(player)
-    @players << player
+    self.players << player
     return @players.length
   end
 
   def player_exists(player)
-   @players.include?(player)
+   self.players.include?(player)
   end
 
   def team_score(wonorlost)
