@@ -21,4 +21,13 @@ attr_accessor :team_name, :players, :coach
   # def set_coach_name(name)
   #   @coach = name
   # end
+
+  def add_player(player)
+    @players << player
+    return @players.length
+  end
+
+  def player_exists(player)
+   @players.include?(player)
+  end
 end

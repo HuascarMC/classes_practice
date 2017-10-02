@@ -26,6 +26,11 @@ class TestSports< Minitest::Test
   end
 
   def test_add_player
-    assert_equal(@team.players.length > 3, @team.add_player)
+    assert_equal(4, @team.add_player('player_4'))
+  end
+
+  def test_player_exists
+    @team.players[0]
+    assert_equal(true, @team.player_exists('player_2'))
   end
 end
