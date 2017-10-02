@@ -1,20 +1,20 @@
 class CodeClanStudent
 
-  def initialize(student_name, cohort)
-    @student_name = student_name
+  def initialize(input_student, cohort)
+    @student = input_student
     @cohort = cohort
   end
 
   def student_name
-    return @student_name
+    @student
   end
 
   def cohort
-    return @cohort
+    @cohort
   end
 
-  def set_student_name(student_name)
-    @student_name = student_name
+  def set_student_name(input_student)
+    @student = input_student
   end
 
   def set_cohort(cohort)
@@ -26,7 +26,8 @@ class CodeClanStudent
   end
 
   def say_fav_language(language)
+    puts "My favorite language is #{language}"
     return "My favorite language is #{language}"
   end
-  
+
 end
