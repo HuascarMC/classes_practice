@@ -13,16 +13,19 @@ class TestSports< Minitest::Test
   end
 
   def test_players
-    assert_equal(['player_1', 'player_2', 'player_3'], @team.player_names)
+    assert_equal(['player_1', 'player_2', 'player_3'], @team.players)
   end
 
   def test_coach
-    assert_equal('coach', @team.coach_name)
+    assert_equal('coach', @team.coach)
   end
 
   def test_set_coach_name
-    @team.set_coach_name('Yoni')
-    assert_equal('Yoni', @team.coach_name)
+    @team.coach = 'Yoni'
+    assert_equal('Yoni', @team.coach)
   end
 
+  def test_add_player
+    assert_equal(@team.players.length > 3, @team.add_player)
+  end
 end
