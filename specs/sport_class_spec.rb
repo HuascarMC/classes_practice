@@ -2,10 +2,11 @@ require('minitest/autorun')
 require('minitest/rg')
 require_relative('../sport_class.rb')
 
-class TestSports< Minitest::Test
+class TestSports < Minitest::Test
 
   def setup
-    @team = Sports.new('Codeam', ['player_1', 'player_2', 'player_3'], 'coach')
+    # @players = ['player_1', 'player_2', 'player_3']
+    @team = Sports.new('Codeam', ['player_1', 'player_2', 'player_3'], 'John')
   end
 
   def test_team_name
@@ -17,18 +18,16 @@ class TestSports< Minitest::Test
   end
 
   def test_coach
-    assert_equal('coach', @team.coach)
+    assert_equal('John', @team.coach)
   end
 
   def test_set_coach_name
-    @team.coach = 'Yoni'
-    assert_equal('Yoni', @team.coach)
+    assert_equal('Yoni', @team.set_coach_name('Yoni'))
   end
 
   def test_add_player
-    @team.add_player('player_4')
-    result = @team.players.length
-    assert_equal(4, result)
+    result = ['player_1', 'player_2', 'player_3', 'player_4']
+    assert_equal(result, @team.add_player('player_4'))
   end
 
   def test_player_exists
@@ -37,8 +36,6 @@ class TestSports< Minitest::Test
   end
 
   def test_team_score
-    @team.team_score('lost')
-    result = 'won'
-    assert_equal('won', result)
+    assert_equal('won', @team.team_score('lost'))
   end
 end
