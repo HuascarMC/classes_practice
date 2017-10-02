@@ -9,7 +9,11 @@ class Library
   end
 
   def book_by_name(title)
-     @books[0]
+     for book in @books
+       if book[:title] == title
+         return book
+       end
+     end
   end
 
   def book_by_name_rental_details(title)
@@ -22,7 +26,7 @@ class Library
 
   def add_book(book)
     @books << book
-    return @books.length
+    @books.length
   end
 
   def set_rental_details(title, student, date)

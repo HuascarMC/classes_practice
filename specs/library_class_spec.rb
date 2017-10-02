@@ -47,13 +47,11 @@ class TestLibrary < Minitest::Test
     end
 
     def test_book_by_name
-      result = $books_array[0]
-      assert_equal( @books.book_by_name('into the wild'), result)
+      assert_equal($books_array[1], @books.book_by_name('sophie\'s world'))
     end
 
     def test_book_by_name_rental_details
-      result = $books_array[0][:rental_details]
-      assert_equal(@books.book_by_name_rental_details("into the wild"), result)
+      assert_equal($books_array[0][:rental_details], @books.book_by_name_rental_details("into the wild"))
     end
 
     def test_add_book
@@ -77,7 +75,7 @@ class TestLibrary < Minitest::Test
         date: "thursday"
       }
       # book = $books_array[0][:rental_details]
-      assert_equal(@books.set_rental_details("into the wild", "Yoni", "monday"), result)
+      assert_equal(result, @books.set_rental_details("into the wild", "Yoni", "monday"))
     end
 
 end
